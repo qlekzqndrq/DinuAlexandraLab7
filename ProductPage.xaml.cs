@@ -29,6 +29,7 @@ public partial class ProductPage : ContentPage
     {
         base.OnAppearing();
         listView.ItemsSource = await App.Database.GetProductsAsync();
+        listView.IsRefreshing = false;
     }
 
     async void OnAddButtonClicked(object sender, EventArgs e)
